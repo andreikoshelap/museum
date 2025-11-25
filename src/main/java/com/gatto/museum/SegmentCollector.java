@@ -17,9 +17,10 @@ import java.util.List;
                 result.add(new Range(segmentStart, segmentEnd));
                 return;
             }
+            // check if it adjacent to the last range if yes -extend it, else add new
             if (visitorsNumber == max) {
                 if (!result.isEmpty()) {
-                    Range last = result.get(result.size() - 1);
+                    Range last = result.getLast();
                     if (last.isAdjacentTo(new Range(segmentStart, segmentEnd))) {
                         result.set(result.size() - 1, last.merge(new Range(segmentStart, segmentEnd)));
                         return;
