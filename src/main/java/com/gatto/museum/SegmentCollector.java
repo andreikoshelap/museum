@@ -21,7 +21,7 @@ import java.util.List;
             if (visitorsNumber == max) {
                 if (!result.isEmpty()) {
                     Range last = result.getLast();
-                    if (last.isAdjacentTo(new Range(segmentStart, segmentEnd))) {
+                    if (last.isNeighbourWith(new Range(segmentStart, segmentEnd))) {
                         result.set(result.size() - 1, last.merge(new Range(segmentStart, segmentEnd)));
                         return;
                     }

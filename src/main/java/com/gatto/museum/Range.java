@@ -1,7 +1,7 @@
 package com.gatto.museum;
 
 record Range(int start, int end) {
-    boolean isAdjacentTo(Range other) {
+    boolean isNeighbourWith(Range other) {
         return this.end + 1 == other.start;
     }
     Range merge(Range other) {
